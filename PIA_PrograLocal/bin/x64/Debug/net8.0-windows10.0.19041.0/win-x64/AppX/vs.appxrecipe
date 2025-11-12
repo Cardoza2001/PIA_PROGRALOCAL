@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-11-12T21:41:07.392</Modified>
+      <Modified>2025-11-12T22:01:18.914</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -39,11 +39,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>PIA_PrograLocal.exe</PackagePath>
-      <Modified>2025-11-12T21:41:06.435</Modified>
+      <Modified>2025-11-12T22:01:18.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\PIA_PrograLocal.dll">
       <PackagePath>PIA_PrograLocal.dll</PackagePath>
-      <Modified>2025-11-12T21:41:06.409</Modified>
+      <Modified>2025-11-12T22:01:18.310</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.22\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -953,6 +953,10 @@
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2025-06-10T22:14:49.234</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\Assets\LogoPIA.png">
+      <PackagePath>Assets\LogoPIA.png</PackagePath>
+      <Modified>2025-11-12T21:52:57.173</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <Modified>2025-06-10T22:14:49.236</Modified>
@@ -987,7 +991,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-11-12T21:34:30.610</Modified>
+      <Modified>2025-11-12T22:01:18.497</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

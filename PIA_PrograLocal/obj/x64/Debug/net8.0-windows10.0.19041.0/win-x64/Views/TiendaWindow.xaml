@@ -6,15 +6,15 @@
     xmlns:local="using:PIA_PrograLocal.Views">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="30">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Encabezado -->
         <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
-            <TextBlock Text="🚗 Tienda de Autos"
+            <TextBlock Text="Tienda de Autos"
                        FontSize="32"
                        FontWeight="Bold"
                        Foreground="#0078D7"
@@ -25,10 +25,12 @@
                        HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <!-- Contenido principal -->
         <StackPanel Grid.Row="1" Spacing="15">
 
-            <!-- Selección de marca -->
+            <Image Source="/Assets/LogoPIA.png"
+               Stretch="UniformToFill"
+               Opacity="0.2"/>
+
             <TextBlock Text="Selecciona una marca:" FontSize="20" FontWeight="Bold"/>
             <ComboBox x:ConnectionId='3' x:Name="MarcaComboBox"
                       Width="260"
@@ -36,7 +38,6 @@
                                                                        
                       HorizontalAlignment="Left"/>
 
-            <!-- Lista de modelos -->
             <TextBlock Text="Selecciona un modelo:" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
             <ListView x:ConnectionId='4' x:Name="ModelosListView"
                                                                          
@@ -57,7 +58,6 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <!-- Panel de selección de año -->
             <StackPanel x:ConnectionId='5' x:Name="SeleccionAñoPanel" Visibility="Collapsed" Margin="0,15,0,0">
                 <TextBlock Text="Selecciona el año del modelo:" FontSize="20" FontWeight="Bold"/>
                 <ComboBox x:ConnectionId='6' x:Name="AnioComboBox"
@@ -76,7 +76,6 @@
             </StackPanel>
         </StackPanel>
 
-        <!-- Botón inferior -->
         <Button x:ConnectionId='2' Grid.Row="2"
                 x:Name="VerCarritoButton"
                 Content="🛒 Ver Carrito / Finalizar compra"

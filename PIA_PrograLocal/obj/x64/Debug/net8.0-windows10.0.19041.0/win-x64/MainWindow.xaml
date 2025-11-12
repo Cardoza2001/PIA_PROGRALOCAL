@@ -13,7 +13,7 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        <Image Source="Assets/StoreLogo.png"
+        <Image Source="/Assets/LogoPIA.png"
                Stretch="UniformToFill"
                Opacity="0.2"/>
 

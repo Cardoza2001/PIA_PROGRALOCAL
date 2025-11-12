@@ -715,6 +715,9 @@
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\Assets\LogoPIA.png">
+      <PackagePath>Assets\LogoPIA.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>

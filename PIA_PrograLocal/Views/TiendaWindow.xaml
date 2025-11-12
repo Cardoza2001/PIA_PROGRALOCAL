@@ -6,6 +6,7 @@
     xmlns:local="using:PIA_PrograLocal.Views">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="30">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
