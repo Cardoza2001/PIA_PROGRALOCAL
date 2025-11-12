@@ -17,7 +17,8 @@
                Stretch="UniformToFill"
                Opacity="0.2"/>
 
-        <StackPanel VerticalAlignment="Center"
+        <StackPanel x:ConnectionId='2' x:Name="LoginPanel"
+                    VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Width="300"
                     Spacing="10">
@@ -33,7 +34,7 @@
                        Foreground="White"
                        FontWeight="Bold"
                        FontSize="16"/>
-            <TextBox x:ConnectionId='2' x:Name="UserTextBox"
+            <TextBox x:ConnectionId='4' x:Name="UserTextBox"
                      Height="30"
                      PlaceholderText="Escribe tu usuario"
                      Foreground="White"
@@ -44,12 +45,12 @@
                        Foreground="White"
                        FontWeight="Bold"
                        FontSize="16"/>
-            <PasswordBox x:ConnectionId='3' x:Name="PasswordBox"
+            <PasswordBox x:ConnectionId='5' x:Name="PasswordBox"
                          Height="30"
                          Background="#44FFFFFF"
                          BorderBrush="White"/>
 
-            <Button x:ConnectionId='4' x:Name="LoginButton"
+            <Button x:ConnectionId='6' x:Name="LoginButton"
                     Content="Entrar"
                     Height="40"
                     Margin="0,20,0,0"
@@ -59,7 +60,7 @@
                     CornerRadius="8"
                     BorderThickness="0"/>
 
-            <Button x:ConnectionId='5' x:Name="RegisterButton"
+            <Button x:ConnectionId='7' x:Name="RegisterButton"
                 Content="Crear nueva cuenta"
                 Height="35"
                 Margin="0,5,0,0"
@@ -69,6 +70,8 @@
                 FontSize="14"/>
 
         </StackPanel>
+
+        <Frame x:ConnectionId='3' x:Name="MainFrame"/>
     </Grid>
 </Window>
 

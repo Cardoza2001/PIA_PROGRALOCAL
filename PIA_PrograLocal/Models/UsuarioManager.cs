@@ -14,6 +14,7 @@ namespace PIA_PrograLocal.Models
         );
 
         public static List<Usuario> Usuarios { get; private set; } = new();
+        public static Usuario? UsuarioLogueado { get; set; }
 
         static UsuarioManager()
         {
@@ -68,10 +69,15 @@ namespace PIA_PrograLocal.Models
 
         public static Usuario? ValidarUsuario(string nombre, string contrasena)
         {
-            return Usuarios.FirstOrDefault(u =>
+            var usuario = Usuarios.FirstOrDefault(u =>
                 u.Nombre != null &&
                 u.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
                 u.Contrasena == contrasena);
+
+            if (usuario != null)
+                UsuarioLogueado = usuario;
+
+            return usuario;
         }
     }
 }

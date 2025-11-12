@@ -10,14 +10,16 @@ using System.Linq;
 
 namespace PIA_PrograLocal.Views
 {
-    public sealed partial class TiendaWindow : Window
+    public sealed partial class TiendaWindow : Page
     {
+        private readonly Usuario usuarioActual;
         private List<Auto> carrito = new();
         private Auto? autoSeleccionado;
 
         public TiendaWindow()
         {
             this.InitializeComponent();
+            usuarioActual = UsuarioManager.UsuarioLogueado ?? new Usuario { Nombre = "Invitado" };
             AutosData.Inicializar();
             MarcaComboBox.ItemsSource = AutosData.Autos.Select(a => a.Marca).Distinct().ToList();
         }
@@ -124,10 +126,14 @@ namespace PIA_PrograLocal.Views
             var pdf = new PdfDocument();
             var page = pdf.AddPage();
             var gfx = XGraphics.FromPdfPage(page);
-            var font = new XFont("Arial", 12);
             double y = 50;
 
             gfx.DrawString("TICKET DE COMPRA - Tienda de Autos", new XFont("Arial", 16, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
+            y += 40;
+
+            gfx.DrawString($"Cliente: {usuarioActual.Nombre}", new XFont("Arial", 12, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
+            y += 20;
+            gfx.DrawString($"Correo: {usuarioActual.Correo}", new XFont("Arial", 11), XBrushes.Black, new XPoint(50, y));
             y += 40;
 
             foreach (var auto in carrito)

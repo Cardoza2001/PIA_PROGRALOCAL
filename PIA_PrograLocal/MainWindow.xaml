@@ -17,7 +17,8 @@
                Stretch="UniformToFill"
                Opacity="0.2"/>
 
-        <StackPanel VerticalAlignment="Center"
+        <StackPanel x:Name="LoginPanel"
+                    VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Width="300"
                     Spacing="10">
@@ -69,5 +70,7 @@
                 FontSize="14"/>
 
         </StackPanel>
+
+        <Frame x:Name="MainFrame"/>
     </Grid>
 </Window>

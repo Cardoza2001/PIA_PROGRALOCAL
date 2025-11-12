@@ -226,7 +226,7 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[19];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -240,12 +240,14 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
             _typeNameTable[10] = "Microsoft.UI.Xaml.Window";
             _typeNameTable[11] = "PIA_PrograLocal.RegisterWindow";
             _typeNameTable[12] = "PIA_PrograLocal.Views.TiendaWindow";
-            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[14] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[15] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[16] = "Int32";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[15] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[16] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[17] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[18] = "Int32";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[19];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -259,10 +261,12 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
             _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Window);
             _typeTable[11] = typeof(global::PIA_PrograLocal.RegisterWindow);
             _typeTable[12] = typeof(global::PIA_PrograLocal.Views.TiendaWindow);
-            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[15] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[16] = typeof(global::System.Int32);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[17] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[18] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -302,7 +306,7 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
         private object Activate_9_MainWindow() { return new global::PIA_PrograLocal.MainWindow(); }
         private object Activate_11_RegisterWindow() { return new global::PIA_PrograLocal.RegisterWindow(); }
         private object Activate_12_TiendaWindow() { return new global::PIA_PrograLocal.Views.TiendaWindow(); }
-        private object Activate_13_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_15_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
         private void StaticInitializer_6_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
@@ -311,8 +315,8 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
         private void StaticInitializer_9_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::PIA_PrograLocal.MainWindow).TypeHandle);
         private void StaticInitializer_11_RegisterWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::PIA_PrograLocal.RegisterWindow).TypeHandle);
         private void StaticInitializer_12_TiendaWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::PIA_PrograLocal.Views.TiendaWindow).TypeHandle);
-        private void StaticInitializer_13_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_15_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_15_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_17_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -320,7 +324,7 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_15_IList(object instance, object item)
+        private void VectorAdd_17_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -411,17 +415,25 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
                 break;
 
             case 12:   //  PIA_PrograLocal.Views.TiendaWindow
-                userType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
+                userType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_12_TiendaWindow;
                 userType.StaticInitializer = StaticInitializer_12_TiendaWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 13:   //  Microsoft.UI.Xaml.Controls.Page
+                xamlType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 14:   //  Microsoft.UI.Xaml.Controls.UserControl
+                xamlType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 15:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_13_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_13_TreeViewNode;
+                userType.Activator = Activate_15_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_15_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -433,19 +445,19 @@ namespace PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 14:   //  Microsoft.UI.Xaml.DependencyObject
+            case 16:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 17:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_15_IList;
-                userType.CollectionAdd = VectorAdd_15_IList;
+                userType.StaticInitializer = StaticInitializer_17_IList;
+                userType.CollectionAdd = VectorAdd_17_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 16:   //  Int32
+            case 18:   //  Int32
                 xamlType = new global::PIA_PrograLocal.PIA_PrograLocal_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

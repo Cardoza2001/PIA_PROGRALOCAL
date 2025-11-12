@@ -14,8 +14,6 @@ namespace PIA_PrograLocal
             this.InitializeComponent();
             LoginButton.Click += LoginButton_Click;
             RegisterButton.Click += RegisterButton_Click;
-
-            // Cargar los usuarios desde archivo JSON
             UsuarioManager.CargarUsuarios();
         }
 
@@ -23,10 +21,7 @@ namespace PIA_PrograLocal
         {
             string username = UserTextBox.Text.Trim();
             string password = PasswordBox.Password.Trim();
-
-            // Carga los usuarios antes de validar (por seguridad)
             UsuarioManager.CargarUsuarios();
-
             var usuario = UsuarioManager.ValidarUsuario(username, password);
 
             if (usuario != null)
@@ -40,11 +35,8 @@ namespace PIA_PrograLocal
                 };
 
                 await dialog.ShowAsync();
-
-                var tiendaWindow = new TiendaWindow();
-                tiendaWindow.Activate();
-
-                this.Close();
+                LoginPanel.Visibility = Visibility.Collapsed;
+                MainFrame.Navigate(typeof(Views.TiendaWindow));
             }
             else
             {
