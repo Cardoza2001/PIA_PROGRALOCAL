@@ -1,0 +1,35 @@
+<Window
+    x:Class="PIA_PrograLocal.Views.TiendaWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:PIA_PrograLocal.Models"
+    Title="Tienda de Autos">
+
+    <Grid Padding="20">
+        <StackPanel Spacing="12">
+            <TextBlock Text="Selecciona una marca:" FontSize="20"/>
+            <ComboBox x:Name="MarcaComboBox" Width="240" SelectionChanged="MarcaComboBox_SelectionChanged"/>
+
+            <TextBlock Text="Selecciona un modelo:" FontSize="20" Margin="0,10,0,0"/>
+            <ListView x:Name="ModelosListView" SelectionChanged="ModelosListView_SelectionChanged" Margin="0,10,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Auto">
+                        <StackPanel Margin="0,6">
+                            <TextBlock Text="{x:Bind Modelo}" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="{x:Bind Descripcion}" FontSize="14"/>
+                            <TextBlock Text="{x:Bind PrecioDisplay}" FontSize="14"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackPanel x:Name="SeleccionAñoPanel" Visibility="Collapsed" Margin="0,15,0,0">
+                <TextBlock Text="Selecciona el año del modelo:" FontSize="20"/>
+                <ComboBox x:Name="AnioComboBox" Width="200" Margin="0,6,0,0"/>
+                <Button x:Name="AgregarCarritoButton" Content="Agregar al carrito" Width="200" Margin="0,10,0,0" Click="AgregarCarritoButton_Click"/>
+            </StackPanel>
+
+            <Button x:Name="VerCarritoButton" Content="Ver Carrito / Finalizar compra" Width="260" Margin="0,20,0,0" Click="VerCarritoButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

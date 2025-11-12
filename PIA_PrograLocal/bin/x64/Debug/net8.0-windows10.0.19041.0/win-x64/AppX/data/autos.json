@@ -1,0 +1,254 @@
+[
+  {
+    "Marca": "Toyota",
+    "Modelo": "Corolla 2023",
+    "Descripcion": "Sed\u00E1n, 5p, 1.8L, CVT, 4 cil, gas.",
+    "Precio": 345000,
+    "PrecioDisplay": "Precio: $345,000.00"
+  },
+  {
+    "Marca": "Toyota",
+    "Modelo": "Yaris HB 2024",
+    "Descripcion": "Hatchback, 5p, 1.5L, man, gas, 5 pers.",
+    "Precio": 299000,
+    "PrecioDisplay": "Precio: $299,000.00"
+  },
+  {
+    "Marca": "Toyota",
+    "Modelo": "Camry 2023",
+    "Descripcion": "Sed\u00E1n, 2.5L, aut, 5p, gas, 4 cil.",
+    "Precio": 565000,
+    "PrecioDisplay": "Precio: $565,000.00"
+  },
+  {
+    "Marca": "Toyota",
+    "Modelo": "RAV4 2024",
+    "Descripcion": "SUV, 5p, 2.5L, aut, AWD, gas.",
+    "Precio": 685000,
+    "PrecioDisplay": "Precio: $685,000.00"
+  },
+  {
+    "Marca": "Toyota",
+    "Modelo": "Hilux 2023",
+    "Descripcion": "Pick-up, 4x4, 2.8L, di\u00E9sel, doble cab.",
+    "Precio": 715000,
+    "PrecioDisplay": "Precio: $715,000.00"
+  },
+  {
+    "Marca": "Toyota",
+    "Modelo": "Tacoma 2024",
+    "Descripcion": "Pick-up, 4x4, 3.5L, aut, gas, 5p.",
+    "Precio": 830000,
+    "PrecioDisplay": "Precio: $830,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "Civic 2023",
+    "Descripcion": "Sed\u00E1n, 1.5L turbo, CVT, 5p, gas.",
+    "Precio": 485000,
+    "PrecioDisplay": "Precio: $485,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "Accord 2023",
+    "Descripcion": "Sed\u00E1n, 2.0L, aut, 4p, gas.",
+    "Precio": 610000,
+    "PrecioDisplay": "Precio: $610,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "CR-V 2024",
+    "Descripcion": "SUV, 5p, 1.5L turbo, CVT, gas.",
+    "Precio": 705000,
+    "PrecioDisplay": "Precio: $705,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "HR-V 2024",
+    "Descripcion": "SUV compacta, 1.8L, CVT, gas, 5 pers.",
+    "Precio": 545000,
+    "PrecioDisplay": "Precio: $545,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "Pilot 2023",
+    "Descripcion": "SUV, 7p, 3.5L V6, AWD, aut.",
+    "Precio": 930000,
+    "PrecioDisplay": "Precio: $930,000.00"
+  },
+  {
+    "Marca": "Honda",
+    "Modelo": "Ridgeline 2023",
+    "Descripcion": "Pick-up, V6 3.5L, aut, AWD, 5p.",
+    "Precio": 880000,
+    "PrecioDisplay": "Precio: $880,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "Sentra 2023",
+    "Descripcion": "Sed\u00E1n, 1.8L, CVT, gas, 5p.",
+    "Precio": 385000,
+    "PrecioDisplay": "Precio: $385,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "Versa 2024",
+    "Descripcion": "Sed\u00E1n, 1.6L, man, gas, 5p.",
+    "Precio": 310000,
+    "PrecioDisplay": "Precio: $310,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "Altima 2023",
+    "Descripcion": "Sed\u00E1n, 2.5L, aut, AWD, gas.",
+    "Precio": 540000,
+    "PrecioDisplay": "Precio: $540,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "X-Trail 2023",
+    "Descripcion": "SUV, 2.5L, aut, AWD, gas.",
+    "Precio": 690000,
+    "PrecioDisplay": "Precio: $690,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "Frontier 2023",
+    "Descripcion": "Pick-up, 4x4, 3.8L V6, aut.",
+    "Precio": 755000,
+    "PrecioDisplay": "Precio: $755,000.00"
+  },
+  {
+    "Marca": "Nissan",
+    "Modelo": "March 2024",
+    "Descripcion": "Hatchback, 1.6L, man, gas, 5p.",
+    "Precio": 270000,
+    "PrecioDisplay": "Precio: $270,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Focus 2023",
+    "Descripcion": "Sed\u00E1n, 2.0L, aut, gas, 5p.",
+    "Precio": 420000,
+    "PrecioDisplay": "Precio: $420,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Fusion 2023",
+    "Descripcion": "Sed\u00E1n, 2.5L, aut, gas, 4p.",
+    "Precio": 510000,
+    "PrecioDisplay": "Precio: $510,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Escape 2024",
+    "Descripcion": "SUV, 1.5L turbo, aut, AWD.",
+    "Precio": 655000,
+    "PrecioDisplay": "Precio: $655,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Bronco Sport 2024",
+    "Descripcion": "SUV, 2.0L turbo, AWD, gas.",
+    "Precio": 835000,
+    "PrecioDisplay": "Precio: $835,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Ranger 2023",
+    "Descripcion": "Pick-up, 4x4, 2.3L turbo, aut.",
+    "Precio": 785000,
+    "PrecioDisplay": "Precio: $785,000.00"
+  },
+  {
+    "Marca": "Ford",
+    "Modelo": "Mustang 2023",
+    "Descripcion": "Coup\u00E9, V8 5.0L, man, gas, 2p.",
+    "Precio": 1150000,
+    "PrecioDisplay": "Precio: $1,150,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Onix 2024",
+    "Descripcion": "Sed\u00E1n, 1.2L turbo, aut, gas, 5p.",
+    "Precio": 345000,
+    "PrecioDisplay": "Precio: $345,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Aveo 2024",
+    "Descripcion": "Sed\u00E1n, 1.5L, man, gas, 5p.",
+    "Precio": 290000,
+    "PrecioDisplay": "Precio: $290,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Tracker 2023",
+    "Descripcion": "SUV, 1.2L turbo, aut, gas.",
+    "Precio": 470000,
+    "PrecioDisplay": "Precio: $470,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Equinox 2023",
+    "Descripcion": "SUV, 1.5L turbo, aut, AWD.",
+    "Precio": 635000,
+    "PrecioDisplay": "Precio: $635,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Silverado 2024",
+    "Descripcion": "Pick-up, 4x4, V8 5.3L, aut.",
+    "Precio": 995000,
+    "PrecioDisplay": "Precio: $995,000.00"
+  },
+  {
+    "Marca": "Chevrolet",
+    "Modelo": "Camaro 2023",
+    "Descripcion": "Coup\u00E9, V6 3.6L, aut, gas, 2p.",
+    "Precio": 1100000,
+    "PrecioDisplay": "Precio: $1,100,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "Serie 1 2023",
+    "Descripcion": "Hatchback, 1.5L turbo, aut.",
+    "Precio": 675000,
+    "PrecioDisplay": "Precio: $675,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "Serie 3 2024",
+    "Descripcion": "Sed\u00E1n, 2.0L turbo, aut, gas.",
+    "Precio": 985000,
+    "PrecioDisplay": "Precio: $985,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "Serie 5 2023",
+    "Descripcion": "Sed\u00E1n, 3.0L, aut, 5p, gas.",
+    "Precio": 1240000,
+    "PrecioDisplay": "Precio: $1,240,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "X1 2023",
+    "Descripcion": "SUV compacta, 1.5L turbo, AWD.",
+    "Precio": 890000,
+    "PrecioDisplay": "Precio: $890,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "X3 2024",
+    "Descripcion": "SUV mediana, 2.0L turbo, AWD.",
+    "Precio": 1090000,
+    "PrecioDisplay": "Precio: $1,090,000.00"
+  },
+  {
+    "Marca": "BMW",
+    "Modelo": "Z4 2024",
+    "Descripcion": "Roadster, 2p, 2.0L turbo, aut.",
+    "Precio": 1360000,
+    "PrecioDisplay": "Precio: $1,360,000.00"
+  }
+]

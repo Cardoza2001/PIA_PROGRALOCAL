@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PIA_PrograLocal (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PIA_PrograLocal (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
