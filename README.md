@@ -1,0 +1,95 @@
+<Window
+    x:Class="PIA_PrograLocal.Views.TiendaWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:PIA_PrograLocal.Models"
+    Title="Tienda de Autos"
+    Width="900"
+    Height="600"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Padding="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
+            <TextBlock Text="🚗 Tienda de Autos"
+                       FontSize="32"
+                       FontWeight="Bold"
+                       Foreground="#0078D7"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Text="Selecciona un vehículo para agregar al carrito"
+                       FontSize="16"
+                       Foreground="Gray"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Contenido principal -->
+        <StackPanel Grid.Row="1" Spacing="15">
+
+            <!-- Selección de marca -->
+            <TextBlock Text="Selecciona una marca:" FontSize="20" FontWeight="Bold"/>
+            <ComboBox x:Name="MarcaComboBox"
+                      Width="260"
+                      PlaceholderText="Elige una marca"
+                      SelectionChanged="MarcaComboBox_SelectionChanged"
+                      HorizontalAlignment="Left"/>
+
+            <!-- Lista de modelos -->
+            <TextBlock Text="Selecciona un modelo:" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
+            <ListView x:Name="ModelosListView"
+                      SelectionChanged="ModelosListView_SelectionChanged"
+                      Margin="0,10,0,0"
+                      Height="220"
+                      BorderThickness="1"
+                      BorderBrush="LightGray">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Auto">
+                        <Border BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="6" Padding="8" Margin="0,5">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Modelo}" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="{x:Bind Descripcion}" FontSize="14" Foreground="Gray" TextWrapping="WrapWholeWords"/>
+                                <TextBlock Text="{x:Bind PrecioDisplay}" FontSize="14" Foreground="#0078D7"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Panel de selección de año -->
+            <StackPanel x:Name="SeleccionAñoPanel" Visibility="Collapsed" Margin="0,15,0,0">
+                <TextBlock Text="Selecciona el año del modelo:" FontSize="20" FontWeight="Bold"/>
+                <ComboBox x:Name="AnioComboBox"
+                          Width="200"
+                          Margin="0,6,0,0"
+                          PlaceholderText="Elige un año"/>
+
+                <Button x:Name="AgregarCarritoButton"
+                        Content="Agregar al carrito"
+                        Width="220"
+                        Margin="0,10,0,0"
+                        Background="#0078D7"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="AgregarCarritoButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Botón inferior -->
+        <Button Grid.Row="2"
+                x:Name="VerCarritoButton"
+                Content="🛒 Ver Carrito / Finalizar compra"
+                Width="300"
+                Margin="0,20,0,0"
+                Background="#28A745"
+                Foreground="White"
+                FontWeight="Bold"
+                Padding="12,8"
+                Click="VerCarritoButton_Click"
+                HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
