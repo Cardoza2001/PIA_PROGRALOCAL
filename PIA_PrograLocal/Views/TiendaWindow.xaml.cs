@@ -17,6 +17,7 @@ namespace PIA_PrograLocal.Views
         private readonly List<Auto> carrito = new();
         private Auto? autoSeleccionado;
 
+        // 🔹 Constructor original (por compatibilidad)
         public TiendaWindow()
         {
             this.InitializeComponent();
@@ -31,6 +32,21 @@ namespace PIA_PrograLocal.Views
                 Correo = "sincorreo@ejemplo.com"
             };
 
+            InicializarTienda();
+        }
+
+        // 🔹 Nuevo constructor que recibe el usuario actual
+        public TiendaWindow(Usuario usuario) : this()
+        {
+            usuarioActual = usuario ?? new Usuario
+            {
+                Nombre = "Invitado",
+                Correo = "sincorreo@ejemplo.com"
+            };
+        }
+
+        private void InicializarTienda()
+        {
             AutosData.Inicializar();
             MarcaComboBox.ItemsSource = AutosData.Autos
                 .Select(a => a.Marca)

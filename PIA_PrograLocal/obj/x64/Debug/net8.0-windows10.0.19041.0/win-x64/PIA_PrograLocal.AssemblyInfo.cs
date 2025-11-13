@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PIA_PrograLocal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4349fbbdbe734d5c322484980572b220d2af5f07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520703d6c1f1b35b4c3328e8e265c7ff59b9db79")]
 [assembly: System.Reflection.AssemblyProductAttribute("PIA_PrograLocal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PIA_PrograLocal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

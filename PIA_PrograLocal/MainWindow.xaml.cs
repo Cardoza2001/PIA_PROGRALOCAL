@@ -1,4 +1,4 @@
-using Microsoft.UI.Xaml;
+ï»¿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using PIA_PrograLocal.Models;
 using PIA_PrograLocal.Views;
@@ -49,8 +49,8 @@ namespace PIA_PrograLocal
                 var dialog = new ContentDialog
                 {
                     XamlRoot = this.Content.XamlRoot,
-                    Title = "Error de inicio de sesión",
-                    Content = "Usuario o contraseña incorrectos.",
+                    Title = "Error de inicio de sesiÃ³n",
+                    Content = "Usuario o contraseÃ±a incorrectos.",
                     CloseButtonText = "OK"
                 };
 

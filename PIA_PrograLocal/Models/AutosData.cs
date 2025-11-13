@@ -13,6 +13,7 @@ namespace PIA_PrograLocal.Models
         public string Descripcion { get; set; } = string.Empty;
         public double Precio { get; set; }
         public string PrecioDisplay => $"Precio: {Precio:C}";
+        public string MarcaModeloPrecio => $"{Marca} {Modelo} - {Precio:C}";
     }
 
     public static class AutosData
