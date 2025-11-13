@@ -5,88 +5,68 @@
     xmlns:models="using:PIA_PrograLocal.Models"
     xmlns:local="using:PIA_PrograLocal.Views">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="30">
-
+    <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
-            <TextBlock Text="Tienda de Autos"
-                       FontSize="32"
-                       FontWeight="Bold"
-                       Foreground="#0078D7"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Text="Selecciona un vehículo para agregar al carrito"
-                       FontSize="16"
-                       Foreground="Gray"
-                       HorizontalAlignment="Center"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Spacing="15">
-
-            <Image Source="/Assets/LogoPIA.png"
-               Stretch="UniformToFill"
-               Opacity="0.2"/>
-
-            <TextBlock Text="Selecciona una marca:" FontSize="20" FontWeight="Bold"/>
-            <ComboBox x:ConnectionId='3' x:Name="MarcaComboBox"
-                      Width="260"
-                      PlaceholderText="Elige una marca"
-                                                                       
-                      HorizontalAlignment="Left"/>
-
-            <TextBlock Text="Selecciona un modelo:" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
-            <ListView x:ConnectionId='4' x:Name="ModelosListView"
-                                                                         
-                      Margin="0,10,0,0"
-                      Height="220"
-                      BorderThickness="1"
-                      BorderBrush="LightGray">
-                <ListView.ItemTemplate>
-                    <DataTemplate                         >
-                        <Border x:ConnectionId='9' BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="6" Padding="8" Margin="0,5">
-                            <StackPanel>
-                                <TextBlock x:ConnectionId='10'                        FontWeight="Bold" FontSize="16"/>
-                                <TextBlock x:ConnectionId='11'                             FontSize="14" Foreground="Gray" TextWrapping="WrapWholeWords"/>
-                                <TextBlock x:ConnectionId='12'                               FontSize="14" Foreground="#0078D7"/>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <StackPanel x:ConnectionId='5' x:Name="SeleccionAñoPanel" Visibility="Collapsed" Margin="0,15,0,0">
-                <TextBlock Text="Selecciona el año del modelo:" FontSize="20" FontWeight="Bold"/>
-                <ComboBox x:ConnectionId='6' x:Name="AnioComboBox"
-                          Width="200"
-                          Margin="0,6,0,0"
-                          PlaceholderText="Elige un año"/>
-
-                <Button x:ConnectionId='7' x:Name="AgregarCarritoButton"
-                        Content="Agregar al carrito"
-                        Width="220"
-                        Margin="0,10,0,0"
-                        Background="#0078D7"
-                        Foreground="White"
-                        FontWeight="Bold"
-                                                          />
+        <StackPanel Orientation="Horizontal" Background="#2D2D30" Padding="10">
+            <TextBlock Text="Tienda de Autos" Foreground="White" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:ConnectionId='20' Content="Historial de compras"                               Margin="10,0,0,0"/>
+                <Button x:ConnectionId='21' Content="Cerrar sesión"                                  Margin="10,0,0,0"/>
             </StackPanel>
         </StackPanel>
 
-        <Button x:ConnectionId='2' Grid.Row="2"
-                x:Name="VerCarritoButton"
-                Content="🛒 Ver Carrito / Finalizar compra"
-                Width="300"
-                Margin="0,20,0,0"
-                Background="#28A745"
-                Foreground="White"
-                FontWeight="Bold"
-                Padding="12,8"
-                                              
-                HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Selecciona una marca:" FontWeight="Bold" FontSize="16"/>
+                <ComboBox x:ConnectionId='10' x:Name="MarcaComboBox"                                                   Margin="0,10,0,20"/>
+
+                <ListView x:ConnectionId='11' x:Name="ModelosListView"                                                     Height="300">
+                    <ListView.ItemTemplate>
+                        <DataTemplate                         >
+                            <StackPanel x:ConnectionId='16' Margin="5">
+                                <TextBlock x:ConnectionId='17'                        FontWeight="Bold"/>
+                                <TextBlock x:ConnectionId='18'                             TextWrapping="WrapWholeWords"/>
+                                <TextBlock x:ConnectionId='19'                               Foreground="#0078D7"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackPanel x:ConnectionId='12' x:Name="SeleccionAñoPanel" Visibility="Collapsed" Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Año:" VerticalAlignment="Center"/>
+                    <ComboBox x:ConnectionId='13' x:Name="AnioComboBox" Width="100" Margin="10,0,0,0"/>
+                    <Button x:ConnectionId='14' Content="Agregar al carrito"                                    Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Carrito de compras:" FontWeight="Bold" FontSize="16"/>
+                <ListView x:ConnectionId='2' x:Name="CarritoListView" Height="400">
+                    <ListView.ItemTemplate>
+                        <DataTemplate                         >
+                            <StackPanel x:ConnectionId='5' Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Width="200">
+                                    <TextBlock x:ConnectionId='7'                       FontWeight="Bold"/>
+                                    <TextBlock x:ConnectionId='8'                        />
+                                    <TextBlock x:ConnectionId='9'                               Foreground="#0078D7"/>
+                                </StackPanel>
+                                <Button x:ConnectionId='6' Content="Quitar"                                                 Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button x:ConnectionId='3' Content="Finalizar compra"                                Margin="0,20,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
 

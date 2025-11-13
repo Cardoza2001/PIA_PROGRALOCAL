@@ -1,4 +1,4 @@
-using Microsoft.UI.Xaml;
+ï»¿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
@@ -7,21 +7,35 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using PIA_PrograLocal.Helpers;
 
 namespace PIA_PrograLocal.Views
 {
     public sealed partial class TiendaWindow : Page
     {
         private readonly Usuario usuarioActual;
-        private List<Auto> carrito = new();
+        private readonly List<Auto> carrito = new();
         private Auto? autoSeleccionado;
 
         public TiendaWindow()
         {
             this.InitializeComponent();
-            usuarioActual = UsuarioManager.UsuarioLogueado ?? new Usuario { Nombre = "Invitado" };
+
+            var currentWindow = WindowHelper.GetWindowForElement(this);
+            if (currentWindow != null)
+                WindowHelper.RegisterWindow(this, currentWindow);
+
+            usuarioActual = UsuarioManager.UsuarioLogueado ?? new Usuario
+            {
+                Nombre = "Invitado",
+                Correo = "sincorreo@ejemplo.com"
+            };
+
             AutosData.Inicializar();
-            MarcaComboBox.ItemsSource = AutosData.Autos.Select(a => a.Marca).Distinct().ToList();
+            MarcaComboBox.ItemsSource = AutosData.Autos
+                .Select(a => a.Marca)
+                .Distinct()
+                .ToList();
         }
 
         private void MarcaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -30,7 +44,7 @@ namespace PIA_PrograLocal.Views
             {
                 var modelos = AutosData.Autos.Where(a => a.Marca == marca).ToList();
                 ModelosListView.ItemsSource = modelos;
-                SeleccionAñoPanel.Visibility = Visibility.Collapsed;
+                SeleccionAÃ±oPanel.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -41,7 +55,7 @@ namespace PIA_PrograLocal.Views
                 autoSeleccionado = auto;
                 AnioComboBox.ItemsSource = new List<int> { 2022, 2023, 2024, 2025 };
                 AnioComboBox.SelectedIndex = 0;
-                SeleccionAñoPanel.Visibility = Visibility.Visible;
+                SeleccionAÃ±oPanel.Visibility = Visibility.Visible;
             }
         }
 
@@ -57,6 +71,10 @@ namespace PIA_PrograLocal.Views
                     Precio = autoSeleccionado.Precio
                 });
 
+                CarritoListView.ItemsSource = null;
+                CarritoListView.ItemsSource = carrito;
+                ActualizarTotal();
+
                 var dialog = new ContentDialog
                 {
                     XamlRoot = this.Content.XamlRoot,
@@ -64,12 +82,22 @@ namespace PIA_PrograLocal.Views
                     Content = $"{autoSeleccionado.Marca} {autoSeleccionado.Modelo} ({anio}) fue agregado correctamente.",
                     CloseButtonText = "OK"
                 };
-
                 await dialog.ShowAsync();
 
                 MarcaComboBox.SelectedIndex = -1;
                 ModelosListView.ItemsSource = null;
-                SeleccionAñoPanel.Visibility = Visibility.Collapsed;
+                SeleccionAÃ±oPanel.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void EliminarDelCarrito_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag is Auto auto)
+            {
+                carrito.Remove(auto);
+                CarritoListView.ItemsSource = null;
+                CarritoListView.ItemsSource = carrito;
+                ActualizarTotal();
             }
         }
 
@@ -80,8 +108,8 @@ namespace PIA_PrograLocal.Views
                 var dialog = new ContentDialog
                 {
                     XamlRoot = this.Content.XamlRoot,
-                    Title = "Carrito vacío",
-                    Content = "Agrega al menos un vehículo antes de finalizar la compra.",
+                    Title = "Carrito vacÃ­o",
+                    Content = "Agrega al menos un vehÃ­culo antes de finalizar la compra.",
                     CloseButtonText = "OK"
                 };
                 await dialog.ShowAsync();
@@ -96,8 +124,8 @@ namespace PIA_PrograLocal.Views
             {
                 XamlRoot = this.Content.XamlRoot,
                 Title = "Confirmar compra",
-                Content = $"{resumen}\nTOTAL: {total:C}\n\n¿Deseas generar el ticket en PDF?",
-                PrimaryButtonText = "Sí",
+                Content = $"{resumen}\nTOTAL: {total:C}\n\nÂ¿Deseas generar el ticket en PDF?",
+                PrimaryButtonText = "SÃ­",
                 CloseButtonText = "No"
             };
 
@@ -105,23 +133,41 @@ namespace PIA_PrograLocal.Views
 
             if (result == ContentDialogResult.Primary)
             {
-                GenerarTicketPDF();
+                string folio = Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+                string rutaPDF = GenerarTicketPDF(folio);
+
+                var historial = new HistorialCompra
+                {
+                    Usuario = usuarioActual?.Nombre ?? "Invitado",
+                    Folio = folio,
+                    Autos = new List<Auto>(carrito),
+                    RutaPDF = rutaPDF,
+                    Fecha = DateTime.Now,
+                    Total = total
+                };
+
+                HistorialData.AgregarCompra(historial);
+
                 var doneDialog = new ContentDialog
                 {
                     XamlRoot = this.Content.XamlRoot,
                     Title = "Compra realizada",
-                    Content = "Se ha generado el ticket en tu escritorio.",
+                    Content = $"Se ha generado el ticket en tu escritorio.\nFolio: {folio}",
                     CloseButtonText = "OK"
                 };
                 await doneDialog.ShowAsync();
+
                 carrito.Clear();
+                CarritoListView.ItemsSource = null;
+                ActualizarTotal();
             }
         }
 
-        private void GenerarTicketPDF()
+        private string GenerarTicketPDF(string folio)
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string filePath = Path.Combine(desktopPath, "Ticket_Compra.pdf");
+            string fileName = $"{usuarioActual!.Nombre}_Ticket_{folio}.pdf";
+            string filePath = Path.Combine(desktopPath, fileName);
 
             var pdf = new PdfDocument();
             var page = pdf.AddPage();
@@ -130,8 +176,9 @@ namespace PIA_PrograLocal.Views
 
             gfx.DrawString("TICKET DE COMPRA - Tienda de Autos", new XFont("Arial", 16, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
             y += 40;
-
-            gfx.DrawString($"Cliente: {usuarioActual.Nombre}", new XFont("Arial", 12, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
+            gfx.DrawString($"Folio: {folio}", new XFont("Arial", 11, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
+            y += 20;
+            gfx.DrawString($"Cliente: {usuarioActual.Nombre}", new XFont("Arial", 12), XBrushes.Black, new XPoint(50, y));
             y += 20;
             gfx.DrawString($"Correo: {usuarioActual.Correo}", new XFont("Arial", 11), XBrushes.Black, new XPoint(50, y));
             y += 40;
@@ -147,8 +194,45 @@ namespace PIA_PrograLocal.Views
             }
 
             gfx.DrawString($"TOTAL: {carrito.Sum(a => a.Precio):C}", new XFont("Arial", 14, XFontStyle.Bold), XBrushes.Black, new XPoint(50, y));
-
             pdf.Save(filePath);
+            return filePath;
+        }
+
+        private void ActualizarTotal()
+        {
+            double total = carrito.Sum(a => a.Precio);
+            System.Diagnostics.Debug.WriteLine($"TOTAL: {total:C}");
+        }
+
+        private async void CerrarSesionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new ContentDialog
+            {
+                XamlRoot = this.Content.XamlRoot,
+                Title = "Cerrar sesiÃ³n",
+                Content = "Â¿Seguro que deseas cerrar sesiÃ³n?",
+                PrimaryButtonText = "SÃ­",
+                CloseButtonText = "No"
+            };
+
+            var result = await dialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                UsuarioManager.UsuarioLogueado = null;
+
+                var mainWindow = new MainWindow();
+                App.CambiarVentana(mainWindow);
+            }
+        }
+
+        private void HistorialButton_Click(object sender, RoutedEventArgs e)
+        {
+            var historialWindow = new Microsoft.UI.Xaml.Window
+            {
+                Content = new HistorialWindow(usuarioActual)
+            };
+            historialWindow.Activate();
         }
     }
 }

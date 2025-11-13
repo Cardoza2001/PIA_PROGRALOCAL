@@ -1,0 +1,55 @@
+<Page
+    x:Class="PIA_PrograLocal.Views.HistorialWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:PIA_PrograLocal.Models">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <StackPanel Orientation="Horizontal" Background="#2D2D30" Padding="10">
+            <TextBlock Text="Historial de compras"
+                       Foreground="White"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Contenido -->
+        <ScrollViewer Grid.Row="1" Margin="10,20,10,0">
+            <ListView x:Name="ListViewHistorial">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:HistorialCompra">
+                        <Border BorderThickness="1"
+                                BorderBrush="#CCC"
+                                CornerRadius="5"
+                                Margin="0,0,0,10"
+                                Padding="10"
+                                Background="White">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind FechaCompra, Mode=OneTime}" 
+                                           FontWeight="Bold" 
+                                           FontSize="14"/>
+                                <TextBlock Text="{x:Bind DescripcionCompra, Mode=OneTime}"
+                                           TextWrapping="WrapWholeWords"
+                                           Margin="0,5,0,0"/>
+                                <TextBlock Text="{x:Bind TotalCompra, Mode=OneTime}"
+                                           Foreground="#0078D7"
+                                           FontWeight="SemiBold"
+                                           Margin="0,5,0,10"/>
+                                <Button Content="Ver ticket"
+                                        Click="BtnVerTicket_Click"
+                                        HorizontalAlignment="Left"
+                                        Padding="10,5"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</Page>

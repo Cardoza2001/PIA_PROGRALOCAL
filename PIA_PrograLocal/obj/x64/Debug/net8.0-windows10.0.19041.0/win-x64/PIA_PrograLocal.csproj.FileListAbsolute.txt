@@ -281,3 +281,8 @@ C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\De
 C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SixLabors.ImageSharp.dll
 C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\de\PdfSharpCore.resources.dll
 C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\PIA_PrograLocal.sourcelink.json
+C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Views\HistorialWindow.g.i.cs
+C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Views\HistorialWindow.g.cs
+C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Views\HistorialWindow.xaml
+C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Views\HistorialWindow.xbf
+C:\Users\Emanuel Cardoza\source\repos\PIA_PrograLocal\PIA_PrograLocal\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Views\HistorialWindow.xbf

@@ -74,8 +74,7 @@ namespace PIA_PrograLocal.Models
                 u.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) &&
                 u.Contrasena == contrasena);
 
-            if (usuario != null)
-                UsuarioLogueado = usuario;
+            UsuarioLogueado = usuario;
 
             return usuario;
         }

@@ -26,6 +26,8 @@ namespace PIA_PrograLocal
 
             if (usuario != null)
             {
+                UsuarioManager.UsuarioLogueado = usuario;
+
                 var dialog = new ContentDialog
                 {
                     XamlRoot = this.Content.XamlRoot,
@@ -35,8 +37,12 @@ namespace PIA_PrograLocal
                 };
 
                 await dialog.ShowAsync();
-                LoginPanel.Visibility = Visibility.Collapsed;
-                MainFrame.Navigate(typeof(Views.TiendaWindow));
+
+                var tiendaWindow = new Window
+                {
+                    Content = new Views.TiendaWindow()
+                };
+                App.CambiarVentana(tiendaWindow);
             }
             else
             {
@@ -55,8 +61,7 @@ namespace PIA_PrograLocal
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             var registerWindow = new RegisterWindow();
-            registerWindow.Activate();
-            this.Close();
+            App.CambiarVentana(registerWindow);
         }
     }
 }
