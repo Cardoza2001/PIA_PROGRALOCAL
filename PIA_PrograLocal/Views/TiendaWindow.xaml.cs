@@ -34,8 +34,6 @@ namespace PIA_PrograLocal.Views
 
             InicializarTienda();
         }
-
-        // 🔹 Nuevo constructor que recibe el usuario actual
         public TiendaWindow(Usuario usuario) : this()
         {
             usuarioActual = usuario ?? new Usuario

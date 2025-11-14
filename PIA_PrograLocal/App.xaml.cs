@@ -4,12 +4,10 @@ namespace PIA_PrograLocal
 {
     public partial class App : Application
     {
-        // Siempre existirá después de OnLaunched → por eso usamos null!
         public static Window MainAppWindow { get; private set; } = null!;
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            // Crear la ventana principal de la app
             MainAppWindow = new MainWindow();
             MainAppWindow.Activate();
         }
@@ -20,10 +18,7 @@ namespace PIA_PrograLocal
         /// </summary>
         public static void CambiarVentana(Window nuevaVentana)
         {
-            // Cerrar la antigua ventana si existe
             MainAppWindow?.Close();
-
-            // Establecer la nueva
             MainAppWindow = nuevaVentana;
             MainAppWindow.Activate();
         }

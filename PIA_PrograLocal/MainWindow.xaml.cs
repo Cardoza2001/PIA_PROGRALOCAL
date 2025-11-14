@@ -1,9 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using PIA_PrograLocal.Models;
-using PIA_PrograLocal.Views;
 using System;
-using System.Linq;
 
 namespace PIA_PrograLocal
 {

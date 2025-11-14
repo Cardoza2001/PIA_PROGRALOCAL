@@ -10,24 +10,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Encabezado -->
         <StackPanel Orientation="Horizontal" Background="#2D2D30" Padding="10" HorizontalAlignment="Stretch">
             <TextBlock Text="Historial de compras"
                        Foreground="White"
                        FontSize="22"
                        FontWeight="Bold"
                        VerticalAlignment="Center"/>
-            <Button x:ConnectionId='10' Content="Regresar a la tienda"
-                                             
-                    Background="#0078D7"
-                    Foreground="White"
-                    FontWeight="Bold"
-                    Padding="10,5"
-                    Margin="20,0,0,0"
-                    HorizontalAlignment="Right"/>
         </StackPanel>
 
-        <!-- Contenido -->
         <ScrollViewer Grid.Row="1" Margin="10,20,10,0">
             <ListView x:ConnectionId='2' x:Name="ListViewHistorial">
                 <ListView.ItemTemplate>
